@@ -7,7 +7,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: amarbaliyan147/auth
+    - image: your docker username/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -15,7 +15,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: amarbaliyan147/client
+    - image: your docker username/client
       context: client
       docker:
         dockerfile: Dockerfile
