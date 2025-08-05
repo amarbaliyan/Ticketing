@@ -5,7 +5,7 @@ const LandingPage=({currentUser})=>{
     axios.get('api/users/currentuser').catch((err)=>{
         console.log(err.message);
     })
-    return <h1>landing page</h1>
+    return <h1>landing page2</h1>
 }
 
 
