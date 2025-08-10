@@ -8,7 +8,7 @@ build:
     push: false
   artifacts:
 <<<<<<< HEAD
-    - image: amarbaliyan147/auth
+    - image: docker/auth
 =======
     - image: your docker username/auth
 >>>>>>> master
@@ -20,7 +20,7 @@ build:
           - src: 'src/**/*.ts'
             dest: .
 <<<<<<< HEAD
-    - image: amarbaliyan147/client
+    - image: dcoker/client
 =======
     - image: your docker username/client
 >>>>>>> master
