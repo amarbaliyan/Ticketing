@@ -17,3 +17,5 @@
 # Ignore IDE/editor folders
 .vscode/
 .idea/
+
+skaffold.yaml
