@@ -1,11 +1,11 @@
 {
   "name": "@amarb143/common",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "files": [
-    "build"
+    "build/**/*"
   ],
   "scripts": {
     "clean": "del-cli ./build/*",
