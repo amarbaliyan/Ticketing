@@ -1,0 +1,19 @@
+# Ignore dependencies
+**/node_modules
+
+# Ignore Next.js build output
+**/.next
+
+# Ignore CRA build output
+**/build
+
+# Ignore environment variables
+**/.env
+
+# Ignore logs and system files
+*.log
+.DS_Store
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
