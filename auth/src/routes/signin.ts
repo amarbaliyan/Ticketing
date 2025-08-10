@@ -4,8 +4,8 @@ import jwt from 'jsonwebtoken';
 
 import { Password } from '../services/password';
 import { User } from '../model/User';
-import { validateRequest } from '../middlewares/validate-requests';
-import { BadRequestError } from '../errors/bad-request-error';
+import { validateRequest } from '@ecam/common';
+import { BadRequestError } from '@ecam/common';
 
 const router = express.Router();
 
