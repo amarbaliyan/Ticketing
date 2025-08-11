@@ -5,7 +5,7 @@
 **/.next
 
 # Ignore CRA build output
-# **/build
+**/build
 
 # Ignore environment variables
 **/.env
