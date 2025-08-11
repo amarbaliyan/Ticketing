@@ -5,7 +5,7 @@
 **/.next
 
 # Ignore CRA build output
-**/build
+# **/build
 
 # Ignore environment variables
 **/.env
@@ -17,5 +17,3 @@
 # Ignore IDE/editor folders
 .vscode/
 .idea/
-
-

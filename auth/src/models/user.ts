@@ -19,6 +19,7 @@ interface UserModel extends mongoose.Model<UserDoc> {
 interface UserDoc extends mongoose.Document {
   email: string;
   password: string;
+ 
 }
 
 const userSchema = new mongoose.Schema(
@@ -34,7 +35,7 @@ const userSchema = new mongoose.Schema(
   },
   {
     toJSON: {
-      transform(doc, ret) {
+      transform(doc, ret:any) {
         ret.id = ret._id;
         delete ret._id;
         delete ret.password;

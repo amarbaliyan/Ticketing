@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import axios from 'axios';
 import buildClient from '../api/build-client';
 
@@ -19,19 +18,3 @@ LandingPage.getInitialProps = async context => {
   
 
 export default LandingPage;
-=======
-import axios from "axios";
-
-const LandingPage=({currentUser})=>{
-    console.log(currentUser)
-    axios.get('api/users/currentuser').catch((err)=>{
-        console.log(err.message);
-    })
-    return <h1>landing page2</h1>
-}
-
-
-
-
-export default LandingPage;
->>>>>>> master

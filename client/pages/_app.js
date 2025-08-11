@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.css';
-<<<<<<< HEAD
 import buildClient from '../api/build-client';
 import Header from '../components/header';
 
@@ -23,10 +22,3 @@ AppComponent.getInitialProps = async appContext => {
   return {pageProps,...data};
   }
   export default AppComponent;
-=======
-import { Component } from 'react';
-
-export default({Component,pageProps})=>{
-    return <Component{...pageProps}/>
-};
->>>>>>> master
