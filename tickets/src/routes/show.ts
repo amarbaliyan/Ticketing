@@ -1,22 +1,26 @@
 import express,{Request,Response} from 'express';
 import { Ticket } from "../models/ticket";
+import mongoose from 'mongoose';
 import { NotFoundError } from '@amarb143/common';
 
 
-const router=express.Router();
+const router = express.Router();
 
-router.get('/api/tickets/:id',async(req:Request, res:Response)=>{
-    
-    try{
-    const ticket=await Ticket.findById(req.params.id);
+router.get('/api/tickets/:id', async (req: Request, res: Response) => {
+  const { id } = req.params;
 
-    if(!ticket){
-        throw new NotFoundError();
-    }
-    res.send(ticket);
-}catch(err){
-    // console.log(err);
-}
+  // ✅ Validate ID first
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    throw new NotFoundError();
+  }
+
+  const ticket = await Ticket.findById(id);
+
+  if (!ticket) {
+    throw new NotFoundError();
+  }
+
+  res.send(ticket);
 });
 
-export{router as showTicketRouter};
+export { router as showTicketRouter };

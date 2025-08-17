@@ -14,7 +14,7 @@ router.post('/api/tickets', requireAuth,[
   
   validateRequest,
 async (req: Request, res: Response) => {
-  const{title,price}=req.body;
+  const { title, price }=req.body;
   
   const ticket=Ticket.build({
     title,
@@ -24,7 +24,7 @@ async (req: Request, res: Response) => {
   await ticket.save();
 
 
-  res.sendStatus(201);
+  res.status(201).send(ticket);
 });
 
 export { router as CreateTicketRouter };
