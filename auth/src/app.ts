@@ -9,7 +9,7 @@ import { signoutRouter } from './routes/signout';
 import { signupRouter } from './routes/signup';
 import { errorHandler } from '@amarb143/common';
 import { NotFoundError } from '@amarb143/common';
-
+import { AllUserRouter } from './routes/all-user';
 const app = express();
 app.set('trust proxy', true);
 app.use(json());
@@ -24,6 +24,7 @@ app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
+app.use(AllUserRouter);
 
 app.all('*', async (req, res) => {
   throw new NotFoundError();
