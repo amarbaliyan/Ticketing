@@ -1,0 +1,24 @@
+{
+  "name": "ticketing",
+  "version": "1.0.0",
+  "description": "Sure! Here's your beautifully formatted and GitHub-friendly `README.md` file, ready to copy-paste directly into your repo:",
+  "main": "index.js",
+  "scripts": {
+   "test": "concurrently \"npm run test --prefix auth\" \"npm run test --prefix tickets\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amarbaliyan/Ticketing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/amarbaliyan/Ticketing/issues"
+  },
+  "homepage": "https://github.com/amarbaliyan/Ticketing#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
