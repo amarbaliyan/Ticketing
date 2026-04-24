@@ -6,6 +6,9 @@ interface UserPayload {
 declare global {
     namespace Express {
         interface Request {
+            session?: {
+                jwt?: string;
+            };
             currentUser?: UserPayload;
         }
     }

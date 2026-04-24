@@ -1,8 +1,10 @@
     import express, { Request, Response } from 'express';
-    import { app } from '../app';
+    
     import { body } from 'express-validator';
     import { requireAuth, validateRequest } from '@amarb143/common';
 import { Ticket } from '../models/ticket';
+import { TicketCreatedPublisher } from '../events/publisher/ticket-created-publisher';
+import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
 
@@ -22,6 +24,14 @@ async (req: Request, res: Response) => {
     userId:req.currentUser!.id,
   });
   await ticket.save();
+
+  await new TicketCreatedPublisher(natsWrapper.client).publish({
+    id:ticket.id,
+    title:ticket.title,
+    price:ticket.price,
+    userId:ticket.userId
+
+  })
 
 
   res.status(201).send(ticket);
