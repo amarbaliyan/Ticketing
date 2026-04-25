@@ -1,6 +1,3 @@
-Sure! Here's your beautifully formatted and GitHub-friendly `README.md` file, ready to copy-paste directly into your repo:
-
----
 
 ````markdown
 # 🎟️ Ticketing Microservices (Client & Auth)
