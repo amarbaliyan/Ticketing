@@ -19,6 +19,7 @@ interface UserModel extends mongoose.Model<UserDoc> {
 interface UserDoc extends mongoose.Document {
   email: string;
   password: string;
+  id:string
  
 }
 
@@ -50,7 +51,7 @@ userSchema.pre('save', async function(done) {
     const hashed = await Password.toHash(this.get('password'));
     this.set('password', hashed);
   }
-  done();
+
 });
 
 userSchema.statics.build = (attrs: UserAttrs) => {

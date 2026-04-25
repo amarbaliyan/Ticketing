@@ -7,6 +7,8 @@ import {
   NotAuthorizedError,
 } from '@amarb143/common';
 import { Ticket } from '../models/ticket';
+import { TicketUpdatedPublisher } from '../events/publisher/ticket-updated-publisher';
+import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
 
@@ -20,7 +22,7 @@ router.put(
       .withMessage('Price must be provided and must be greater than 0'),
   ],
   validateRequest,
-  async (req: Request, res: Response) => {
+  async (req: Request<{ id: string }>, res: Response) => {
     const ticket = await Ticket.findById(req.params.id);
 
     if (!ticket) {
@@ -37,7 +39,17 @@ router.put(
     });
     await ticket.save();
 
+     new TicketUpdatedPublisher(natsWrapper.client).publish({
+        id:ticket.id,
+        title:ticket.title,
+        price:ticket.price,
+        userId:ticket.userId
+    
+      });
+
     res.send(ticket);
+
+   
   }
 );
 

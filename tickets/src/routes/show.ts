@@ -6,8 +6,8 @@ import { NotFoundError } from '@amarb143/common';
 
 const router = express.Router();
 
-router.get('/api/tickets/:id', async (req: Request, res: Response) => {
-  const { id } = req.params;
+router.get('/api/tickets/:id', async (req: Request<{ id: string }>, res: Response) => {
+  const  id  = req.params.id as string;
 
   // ✅ Validate ID first
   if (!mongoose.Types.ObjectId.isValid(id)) {

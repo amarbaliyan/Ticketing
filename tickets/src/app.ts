@@ -1,5 +1,4 @@
 import express from 'express';
-import 'express-async-errors';
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 import {currentUser, errorHandler, NotFoundError} from '@amarb143/common';
@@ -21,7 +20,7 @@ app.use(CreateTicketRouter);
 app.use(showTicketRouter);
 app.use(indexTicketRouter);
 app.use(updateTicketRouter);
-app.all('*', async (req, res) => {
+app.all('{*any}', async (req, res) => {
   throw new NotFoundError();
 });
 

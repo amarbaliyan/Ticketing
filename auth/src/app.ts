@@ -1,5 +1,5 @@
 import express from 'express';
-import 'express-async-errors';
+
 import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 
@@ -26,7 +26,7 @@ app.use(signoutRouter);
 app.use(signupRouter);
 app.use(AllUserRouter);
 
-app.all('*', async (req, res) => {
+app.all('{*any}', async (req, res) => {
   throw new NotFoundError();
 });
 

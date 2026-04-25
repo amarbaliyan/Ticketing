@@ -4,7 +4,7 @@
   "description": "Sure! Here's your beautifully formatted and GitHub-friendly `README.md` file, ready to copy-paste directly into your repo:",
   "main": "index.js",
   "scripts": {
-   "test": "concurrently \"npm run test --prefix auth\" \"npm run test --prefix tickets\""
+   "test": "concurrently \"npm run test --prefix auth\" \"npm run test --prefix tickets\" \"npm run test --prefix orders\""
   },
   "repository": {
     "type": "git",
